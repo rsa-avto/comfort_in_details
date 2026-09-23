@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Уют в деталях — Квартиры посуточно</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Стили для иконок, чтобы они выглядели идеально и без эмодзи -->
+  <style>
+    .icon-sm {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      vertical-align: middle;
+      margin-right: 6px;
+      flex-shrink: 0;
+    }
+    .icon-star {
+      width: 16px;
+      height: 16px;
+      fill: var(--terracotta);
+      stroke: var(--terracotta);
+      stroke-width: 1;
+      vertical-align: middle;
+      margin-right: 6px;
+      flex-shrink: 0;
+    }
+    .icon-feature {
+      width: 28px;
+      height: 28px;
+      stroke: var(--terracotta);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    /* Гарантируем, что сетка из 2 карточек работает */
+    .apartments-grid-2 {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img class="logo-ikon" src="img/logo.jpg" alt="Логотип Уют в деталях">
+        <span class="logo-text">Уют в деталях</span>
+      </a>
+      <nav class="nav">
+        <a href="catalog.html">Квартиры</a>
+        <a href="about.html">О нас</a>
+        <a href="guests.html">Гостям</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" title="Избранное">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <a href="catalog.html" class="btn-primary">Забронировать</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Уют в деталях</h1>
+        <p class="hero-subtitle">Квартиры посуточно, в которых хочется остаться</p>
+        <div class="hero-cities">
+          <svg class="icon-sm" style="stroke: white;" viewBox="0 0 24 24">...</svg>
+          Тольятти · Самара · Санкт-Петербург
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="search-section" style="margin-top: -40px; position: relative; z-index: 10;">
+  <div class="container">
+    <div class="search-form">
+      <div class="search-field">
+        <label>Город</label>
+        <select id="city-select">
+          <option>Выберите город</option>
+          <option>Тольятти</option>
+          <option>Самара</option>
+          <option>Санкт-Петербург</option>
+        </select>
+      </div>
+      <div class="search-field">
+        <label>Даты</label>
+        <input type="text" placeholder="Заезд — Выезд" id="date-input" onfocus="this.type='date'">
+      </div>
+      <div class="search-field">
+        <label>Гости</label>
+        <select id="guests-select">
+          <option>1 гость</option>
+          <option>2 гостя</option>
+          <option>3 гостя</option>
+          <option>4+ гостей</option>
+        </select>
+      </div>
+      <button class="search-btn" onclick="window.location.href='catalog.html'">
+        Найти квартиру
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- CITIES SECTION 
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Выберите город</h2>
+      </div>
+      <div class="cities-grid">
+        <a href="catalog.html?city=tolyatti" class="city-card">
+          <img src="https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=800" alt="Тольятти">
+          <div class="city-card-overlay">
+            <h3>Тольятти</h3>
+            <p>Современные квартиры в самом сердце города</p>
+          </div>
+          <div class="city-card-arrow">→</div>
+        </a>
+        <a href="catalog.html?city=samara" class="city-card">
+          <img src="https://images.unsplash.com/photo-1556610961-2fecc5927173?w=800" alt="Самара">
+          <div class="city-card-overlay">
+            <h3>Самара</h3>
+            <p>Уютные апартаменты для ваших поездок</p>
+          </div>
+          <div class="city-card-arrow">→</div>
+        </a>
+        <a href="catalog.html?city=spb" class="city-card">
+          <img src="https://images.unsplash.com/photo-1556610961-2fecc5927173?w=800" alt="Санкт-Петербург">
+          <div class="city-card-overlay">
+            <h3>Санкт-Петербург</h3>
+            <p>Стильные квартиры в культурной столице</p>
+          </div>
+          <div class="city-card-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </section>-->
+
+<section class="section section-white">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Популярные квартиры в Тольятти</h2>
+      <a href="catalog.html?city=tolyatti" class="section-link">Все квартиры в Тольятти →</a>
+    </div>
+    <div class="apartments-grid">
+      
+      <!-- Квартира 1 -->
+      <article class="apartment-card" onclick="window.location.href='apartment.html?id=1'" style="cursor: pointer;">
+        <div class="apartment-image">
+          <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600" alt="Студия">
+          <span class="badge">Топ выбор</span>
+          <button class="favorite-btn" onclick="event.stopPropagation()">♡</button>
+        </div>
+        <div class="apartment-info">
+          <h3>Уютная студия с атмосферой</h3>
+          <div class="apartment-location">
+            <svg class="icon-sm" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Автозаводский район
+          </div>
+          <div class="apartment-meta">
+            <span>
+              <svg class="icon-sm" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              до 2 гостей
+            </span>
+            <span>
+              <svg class="icon-sm" viewBox="0 0 24 24"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+              1 кровать
+            </span>
+            <span>
+              <svg class="icon-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              4.9
+            </span>
+          </div>
+          <div class="apartment-footer">
+            <div class="apartment-price">от 2 500 ₽ <small>/ ночь</small></div>
+            <a href="apartment.html?id=1" class="btn-outline" onclick="event.stopPropagation()">Забронировать</a>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Квартира 2 -->
+      <article class="apartment-card" onclick="window.location.href='apartment.html?id=2'" style="cursor: pointer;">
+        <div class="apartment-image">
+          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600" alt="Апартаменты">
+          <span class="badge">Хит</span>
+          <button class="favorite-btn" onclick="event.stopPropagation()">♡</button>
+        </div>
+        <div class="apartment-info">
+          <h3>Двухуровневые апартаменты</h3>
+          <div class="apartment-location">
+            <svg class="icon-sm" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Автозаводский район
+          </div>
+          <div class="apartment-meta">
+            <span>
+              <svg class="icon-sm" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              до 2 гостей
+            </span>
+            <span>
+              <svg class="icon-sm" viewBox="0 0 24 24"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+              1 кровать
+            </span>
+            <span>
+              <svg class="icon-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              5.0
+            </span>
+          </div>
+          <div class="apartment-footer">
+            <div class="apartment-price">от 3 200 ₽ <small>/ ночь</small></div>
+            <a href="apartment.html?id=2" class="btn-outline" onclick="event.stopPropagation()">Забронировать</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Квартира 3 -->
+      <article class="apartment-card" onclick="window.location.href='apartment.html?id=3'" style="cursor: pointer;">
+        <div class="apartment-image">
+          <img src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=600" alt="Квартира">
+          <button class="favorite-btn" onclick="event.stopPropagation()">♡</button>
+        </div>
+        <div class="apartment-info">
+          <h3>Просторная 1-комнатная у парка</h3>
+          <div class="apartment-location">
+            <svg class="icon-sm" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Комсомольский район
+          </div>
+          <div class="apartment-meta">
+            <span>
+              <svg class="icon-sm" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              до 3 гостей
+            </span>
+            <span>
+              <svg class="icon-sm" viewBox="0 0 24 24"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+              1 кровать
+            </span>
+            <span>
+              <svg class="icon-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              4.8
+            </span>
+          </div>
+          <div class="apartment-footer">
+            <div class="apartment-price">от 2 800 ₽ <small>/ ночь</small></div>
+            <a href="apartment.html?id=3" class="btn-outline" onclick="event.stopPropagation()">Забронировать</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Квартира 4 -->
+      <article class="apartment-card" onclick="window.location.href='apartment.html?id=4'" style="cursor: pointer;">
+        <div class="apartment-image">
+          <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600" alt="Студия">
+          <span class="badge">Новинка</span>
+          <button class="favorite-btn" onclick="event.stopPropagation()">♡</button>
+        </div>
+        <div class="apartment-info">
+          <h3>Современная студия в центре</h3>
+          <div class="apartment-location">
+            <svg class="icon-sm" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Центральный район
+          </div>
+          <div class="apartment-meta">
+            <span>
+              <svg class="icon-sm" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              до 2 гостей
+            </span>
+            <span>
+              <svg class="icon-sm" viewBox="0 0 24 24"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+              1 кровать
+            </span>
+            <span>
+              <svg class="icon-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              4.7
+            </span>
+          </div>
+          <div class="apartment-footer">
+            <div class="apartment-price">от 2 600 ₽ <small>/ ночь</small></div>
+            <a href="apartment.html?id=4" class="btn-outline" onclick="event.stopPropagation()">Забронировать</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+  <!-- ТАКЖЕ ДОСТУПНО В ДРУГИХ ГОРОДАХ -->
+  <section class="section" style="background: var(--cream-dark);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Также доступно в других городах</h2>
+        <a href="catalog.html" class="section-link">Все города →</a>
+      </div>
+      <div class="apartments-grid apartments-grid-2">
+        
+        <!-- Самара -->
+        <article class="apartment-card">
+          <div class="apartment-image">
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600" alt="Самара">
+            <span class="badge" style="background: #27ae60;">Самара</span>
+            <button class="favorite-btn">♡</button>
+          </div>
+          <div class="apartment-info">
+            <h3>Стильная квартира у набережной</h3>
+            <div class="apartment-location">
+              <svg class="icon-sm" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Ленинский район
+            </div>
+            <div class="apartment-meta">
+              <span>
+                <svg class="icon-sm" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                до 4 гостей
+              </span>
+              <span>
+                <svg class="icon-sm" viewBox="0 0 24 24"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+                2 кровати
+              </span>
+              <span>
+                <svg class="icon-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                4.8
+              </span>
+            </div>
+            <div class="apartment-footer">
+              <div class="apartment-price">от 3 800 ₽ <small>/ ночь</small></div>
+              <a href="catalog.html?city=samara" class="btn-outline">Забронировать</a>
+            </div>
+          </div>
+        </article>
+        
+        <!-- Санкт-Петербург -->
+        <article class="apartment-card">
+          <div class="apartment-image">
+            <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600" alt="Питер">
+            <span class="badge" style="background: #8e44ad;">Санкт-Петербург</span>
+            <button class="favorite-btn">♡</button>
+          </div>
+          <div class="apartment-info">
+            <h3>Лофт в историческом центре</h3>
+            <div class="apartment-location">
+              <svg class="icon-sm" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Центральный район
+            </div>
+            <div class="apartment-meta">
+              <span>
+                <svg class="icon-sm" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                до 4 гостей
+              </span>
+              <span>
+                <svg class="icon-sm" viewBox="0 0 24 24"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+                2 кровати
+              </span>
+              <span>
+                <svg class="icon-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                4.9
+              </span>
+            </div>
+            <div class="apartment-footer">
+              <div class="apartment-price">от 5 200 ₽ <small>/ ночь</small></div>
+              <a href="catalog.html?city=spb" class="btn-outline">Забронировать</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section features-section">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-image">
+          <img src="https://images.unsplash.com/photo-1495195134817-aeb325a55b65?w=600" alt="Кофе">
+        </div>
+        <div class="features-content">
+          <h2>Мы верим, что уют складывается из мелочей</h2>
+          <p>Всё, чтобы вы чувствовали себя как дома</p>
+          <div class="features-list">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg class="icon-feature" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+              </div>
+              <h4>Кофе и чай</h4>
+              <p>в квартире</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg class="icon-feature" viewBox="0 0 24 24"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+              </div>
+              <h4>Комфортный</h4>
+              <p>сон</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg class="icon-feature" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+              </div>
+              <h4>Чистота</h4>
+              <p>и порядок</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg class="icon-feature" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"></circle><path d="M21 2l-5.5 5.5"></path><path d="M17.5 5.5L21 2l-3.5 3.5"></path><path d="M12 10l5.5 5.5"></path></svg>
+              </div>
+              <h4>Удобное</h4>
+              <p>заселение</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg class="icon-feature" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </div>
+              <h4>Забота</h4>
+              <p>о госте</p>
+            </div>
+          </div>
+        </div>
+        <div class="feature-image">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" alt="Детали">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Отзывы гостей</h2>
+        <a href="#" class="section-link">Все отзывы →</a>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">А</div>
+            <div>
+              <div class="review-name">Анна</div>
+              <div class="review-date">12 июня 2025</div>
+            </div>
+          </div>
+          <p class="review-text">Очень уютная квартира! Всё чисто, красиво, есть всё необходимое. Обязательно вернёмся!</p>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">И</div>
+            <div>
+              <div class="review-name">Игорь</div>
+              <div class="review-date">3 мая 2025</div>
+            </div>
+          </div>
+          <p class="review-text">Отличное расположение, удобное заселение через кейбокс. Квартира полностью соответствует фото. Рекомендую!</p>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">Е</div>
+            <div>
+              <div class="review-name">Елена</div>
+              <div class="review-date">21 апреля 2025</div>
+            </div>
+          </div>
+          <p class="review-text">Прекрасный сервис, внимательная команда. В квартире чувствуется забота о гостях. Спасибо!</p>
+          <div class="review-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img class="logo-ikon" src="img/logo.png" alt="Логотип Уют в деталях" style="height: 100px;">
+            <span class="footer-logo-text">Уют в деталях</span>
+          </div>
+          <p class="footer-desc">Квартиры посуточно в Тольятти, Самаре и Санкт-Петербурге. Уют, который чувствуется с порога.</p>
+        </div>
+        <div>
+          <h4>Навигация</h4>
+          <ul class="footer-links">
+            <li><a href="catalog.html">Квартиры</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="guests.html">Гостям</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Города</h4>
+          <ul class="footer-links">
+            <li><a href="catalog.html?city=tolyatti">Тольятти</a></li>
+            <li><a href="catalog.html?city=samara">Самара</a></li>
+            <li><a href="catalog.html?city=spb">Санкт-Петербург</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+78005553535">+7 (800) 555-35-35</a></li>
+            <li><a href="mailto:hello@uyut-v-detalyah.ru">hello@uyut-v-detalyah.ru</a></li>
+          </ul>
+          <div class="footer-social">
+            <a href="#">TG</a>
+            <a href="#">WA</a>
+            <a href="#">VK</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2025 Уют в деталях. Все права защищены.</div>
+        <div class="footer-tagline">Уют — это не место, это состояние ♥</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

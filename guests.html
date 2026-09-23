@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гостям — Уют в деталях</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/guests.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img class="logo-ikon" src="img/logo.jpg" alt="Логотип">
+        <span class="logo-text">Уют в деталях</span>
+      </a>
+      <nav class="nav">
+        <a href="catalog.html">Квартиры</a>
+        <a href="about.html">О нас</a>
+        <a href="guests.html" class="active">Гостям</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" title="Избранное">♡</button>
+        <a href="catalog.html" class="btn-primary">Забронировать</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="about-hero">
+    <div class="container">
+      <h1>Гостям</h1>
+      <p>Здесь вы найдёте всю необходимую информацию для комфортного проживания</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3>Как забронировать</h3>
+          <p>Выберите квартиру, укажите даты и количество гостей, оплатите удобным способом.</p>
+          <a href="brone.html" class="step-link">Подробнее →</a>
+        </div>
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3>Как заселиться</h3>
+          <p>Мы используем бесконтактное заселение. После оплаты вы получите инструкцию с кодом от кейбокса.</p>
+          <a href="zaselenie.html" class="step-link">Подробнее →</a>
+        </div>
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3>Правила проживания</h3>
+          <p>Мы просим соблюдать несколько простых правил, чтобы отдых был комфортным для всех.</p>
+          <a href="pravila.html" class="step-link">Подробнее →</a>
+        </div>
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <h3>Частые вопросы</h3>
+          <p>Ответы на самые популярные вопросы гостей.</p>
+          <a href="#" class="step-link">Подробнее →</a>
+        </div>
+      </div>
+
+      <div class="contact-block">
+        <div>
+          <h3>Остались вопросы?</h3>
+          <p>Вы можете написать нам любым удобным способом — мы всегда на связи и рады помочь!</p>
+          <form class="contact-form" id="guest-form">
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="tel" placeholder="Телефон" required>
+            <textarea placeholder="Сообщение" required></textarea>
+            <button type="submit" class="btn-primary btn-light">Написать</button>
+          </form>
+        </div>
+        <div>
+          <h4>Мы всегда рядом</h4>
+          <p class="contact-desc">Вы можете связаться с нами любым удобным способом. Ответим быстро и с заботой.</p>
+          <div class="contact-item">
+            <div class="contact-item-icon">📱</div>
+            <div>
+              <div class="contact-item-label">WhatsApp</div>
+              <div>+7 900 123-45-67</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✈</div>
+            <div>
+              <div class="contact-item-label">Telegram</div>
+              <div>@uyut_v_detalyah</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉</div>
+            <div>
+              <div class="contact-item-label">E-mail</div>
+              <div>hello@uyut-v-detalyah.ru</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img class="logo-ikon" src="img/logo.png" alt="Логотип Уют в деталях" style="height: 100px;">
+            <span class="footer-logo-text">Уют в деталях</span>
+          </div>
+          <p class="footer-desc">Квартиры посуточно. Уют, который чувствуется с порога.</p>
+        </div>
+        <div>
+          <h4>Навигация</h4>
+          <ul class="footer-links">
+            <li><a href="catalog.html">Квартиры</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="guests.html">Гостям</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+78005553535">+7 (800) 555-35-35</a></li>
+            <li><a href="mailto:hello@uyut-v-detalyah.ru">hello@uyut-v-detalyah.ru</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2025 Уют в деталях. Все права защищены.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/guests.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — Уют в деталях</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contacts.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img class="logo-ikon" src="img/logo.jpg" alt="Логотип">
+        <span class="logo-text">Уют в деталях</span>
+      </a>
+      <nav class="nav">
+        <a href="catalog.html">Квартиры</a>
+        <a href="about.html">О нас</a>
+        <a href="guests.html">Гостям</a>
+        <a href="contacts.html" class="active">Контакты</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" title="Избранное">♡</button>
+        <a href="catalog.html" class="btn-primary">Забронировать</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="about-hero">
+    <div class="container">
+      <h1>Контакты</h1>
+      <p>Свяжитесь с нами любым удобным способом</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-block contact-block-top">
+        <div>
+          <h3>Напишите нам</h3>
+          <p>Мы ответим в течение 15 минут в рабочее время</p>
+          <form class="contact-form" id="contact-form">
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="tel" placeholder="Телефон" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Сообщение" required></textarea>
+            <button type="submit" class="btn-primary btn-light">Отправить</button>
+          </form>
+        </div>
+        <div>
+          <h4>Наши контакты</h4>
+          <div class="contact-item">
+            <div class="contact-item-icon">📱</div>
+            <div>
+              <div class="contact-item-label">Телефон</div>
+              <div>+7 (800) 555-35-35</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉</div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <div>hello@uyut-v-detalyah.ru</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <div class="contact-item-label">Офис</div>
+              <div>Тольятти, ул. Бульварная, 25</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🕐</div>
+            <div>
+              <div class="contact-item-label">Время работы</div>
+              <div>Ежедневно 9:00 — 21:00</div>
+            </div>
+          </div>
+          <div class="footer-social footer-social-dark">
+            <a href="#">TG</a>
+            <a href="#">WA</a>
+            <a href="#">VK</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img class="logo-ikon" src="img/logo.png" alt="Логотип Уют в деталях" style="height: 100px;">
+            <span class="footer-logo-text">Уют в деталях</span>
+          </div>
+          <p class="footer-desc">Квартиры посуточно. Уют, который чувствуется с порога.</p>
+        </div>
+        <div>
+          <h4>Навигация</h4>
+          <ul class="footer-links">
+            <li><a href="catalog.html">Квартиры</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="guests.html">Гостям</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+78005553535">+7 (800) 555-35-35</a></li>
+            <li><a href="mailto:hello@uyut-v-detalyah.ru">hello@uyut-v-detalyah.ru</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2025 Уют в деталях. Все права защищены.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/contacts.js"></script>
+</body>
+</html>

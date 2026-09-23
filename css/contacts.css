@@ -1,0 +1,82 @@
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.step-card {
+  background: var(--white);
+  padding: 32px 24px;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(62, 39, 35, 0.06);
+  transition: all 0.3s;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(62, 39, 35, 0.1);
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  background: var(--terracotta);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.step-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+
+  font-weight: 600;
+  color: var(--chocolate);
+}
+
+.step-card p {
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 16px;
+}
+
+.step-link {
+  color: var(--terracotta);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.step-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-block-top {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .contact-block {
+    padding: 24px;
+  }
+}
